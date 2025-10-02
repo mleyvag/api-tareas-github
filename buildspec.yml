@@ -1,0 +1,9 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      - echo "Empaquetando la aplicación SAM..."
+      - aws cloudformation package --template-file template.yaml --s3-bucket <TU-BUCKET-PARA-ARTEFACTOS> --output-template-file outputtemplate.yaml
+artifacts:
+  files:
+    - outputtemplate.yaml
